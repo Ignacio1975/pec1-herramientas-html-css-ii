@@ -144,6 +144,66 @@ h3 {
   }
 }
 
+// Portada ilustrada de Born Again
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background-color: #b51c20;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(15, 10, 12, 0.96) 0%,
+      rgba(30, 10, 13, 0.91) 35%,
+      rgba(30, 10, 13, 0.2) 72%,
+      rgba(30, 10, 13, 0) 100%
+    ),
+    url("../images/born-again/portada-principal.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 25%;
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  &__title,
+  &__description {
+    max-width: 650px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+  }
+}
+
+// Adaptación a pantallas pequeñas
+@media (max-width: 767px) {
+  .hero {
+    min-height: 740px;
+    align-items: flex-end;
+
+    background-image:
+      linear-gradient(
+        0deg,
+        rgba(15, 10, 12, 0.98) 0%,
+        rgba(15, 10, 12, 0.88) 35%,
+        rgba(15, 10, 12, 0.08) 85%
+      ),
+      url("../images/born-again/portada-principal.jpg");
+
+    background-position: center top;
+
+    &__container {
+      padding-bottom: 2rem;
+    }
+  }
+}
+
 // Historia de la obra
 
 .book-section {

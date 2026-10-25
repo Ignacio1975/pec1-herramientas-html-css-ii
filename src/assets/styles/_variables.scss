@@ -1,12 +1,48 @@
 @use "sass:color";
 
+// Tipografías
+
 $font-family-sans-serif:
   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-serif: "Georgia", "Times New Roman", serif;
+  Arial, sans-serif;
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+$font-family-serif: Georgia, "Times New Roman", serif;
+
+// Colores
+
+$color-primary: #a71924;
+$color-primary-dark: #701019;
+$color-background: #f5f0e8;
+$color-surface: #fffdf9;
+$color-text: #202020;
+$color-text-muted: #57534e;
+$color-dark: #171717;
+$color-white: #fff;
+
+// Espaciado
+
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2.5rem;
+$spacing-xl: 4rem;
+
+// Diseño adaptable
 
 $mqMinWidth: 420px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Contenedores
+
+$container-max-width: 1100px;
+
+// Función Sass personalizada
+
+@function section-spacing($multiplier: 1) {
+  @return $spacing-xl * $multiplier;
+}
+
+// Variación cromática
+
+$color-primary-light: color.scale($color-primary, $lightness: 75%);

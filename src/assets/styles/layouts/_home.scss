@@ -1,60 +1,332 @@
-@use "../variables";
+@use "../variables" as v;
+
+// Estilos generales
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   margin: 0;
-  padding: 2rem;
-  font-family: variables.$font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: variables.$uoc-bg;
-  color: variables.$uoc-corporate;
+  background-color: v.$color-background;
+  color: v.$color-text;
+  font-family: v.$font-family-sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+a {
+  color: inherit;
 }
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
+a:focus-visible {
+  outline: 3px solid v.$color-primary;
+  outline-offset: 4px;
+}
 
-  @media (min-width: variables.$mqMinWidth) {
-    max-width: none;
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+::selection {
+  background-color: v.$color-primary;
+  color: v.$color-white;
+}
+
+// Cabecera
+
+.site-header {
+  background-color: v.$color-dark;
+  color: v.$color-white;
+
+  &__container {
+    max-width: v.$container-max-width;
+    margin: 0 auto;
+    padding: v.$spacing-md v.$spacing-sm;
+  }
+
+  &__brand {
+    display: inline-block;
+    margin-bottom: v.$spacing-sm;
+    color: v.$color-white;
+    font-family: v.$font-family-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-decoration: none;
   }
 }
 
-.uoc-title {
-  font-family: variables.$font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: variables.$uoc-corporate;
+// Navegación
 
-  @media (min-width: variables.$mqMinWidth) {
-    font-size: 36px;
+.site-nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$spacing-xs v.$spacing-md;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    color: v.$color-white;
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    &:hover {
+      color: v.$color-primary-light;
+    }
   }
 }
 
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
+// Presentación principal
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+  padding: v.section-spacing() v.$spacing-sm;
+  background: linear-gradient(135deg, v.$color-primary-dark, v.$color-dark 80%);
+  color: v.$color-white;
+
+  &__content {
+    width: 100%;
+    max-width: v.$container-max-width;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    color: v.$color-primary-light;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    max-width: 850px;
+    margin-bottom: v.$spacing-md;
+    font-family: v.$font-family-serif;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+  }
+
+  &__subtitle {
+    max-width: 680px;
+    margin-bottom: v.$spacing-lg;
+    font-size: 1.15rem;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    border-radius: 4px;
+    background-color: v.$color-primary;
+    color: v.$color-white;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      background-color: v.$color-primary-dark;
+    }
+  }
+}
+
+// Historia de la obra
+
+.book-section {
+  padding: v.section-spacing() v.$spacing-sm;
+
+  &__container {
+    max-width: v.$container-max-width;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    color: v.$color-primary;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    max-width: 750px;
+    font-family: v.$font-family-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+  }
+
+  &__text {
+    max-width: 760px;
+    color: v.$color-text-muted;
+    font-size: 1.05rem;
+  }
+}
+
+// Autores
+
+.authors {
+  padding: v.section-spacing() v.$spacing-sm;
+  background-color: v.$color-surface;
+
+  &__container {
+    max-width: v.$container-max-width;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    color: v.$color-primary;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-bottom: v.$spacing-lg;
+    font-family: v.$font-family-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-md;
+  }
+
+  &__card {
+    padding: v.$spacing-lg;
+    border-left: 5px solid v.$color-primary;
+    background-color: v.$color-background;
+  }
+
+  &__name {
+    margin-bottom: v.$spacing-xs;
+    font-size: 1.5rem;
+  }
+
+  &__role {
+    color: v.$color-primary;
+    font-weight: 700;
+  }
+
+  &__description {
+    margin-bottom: 0;
+    color: v.$color-text-muted;
+  }
+}
+
+// Ediciones españolas
+
+.editions {
+  padding: v.section-spacing() v.$spacing-sm;
+  background-color: v.$color-dark;
+  color: v.$color-white;
+
+  &__container {
+    max-width: v.$container-max-width;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    color: v.$color-primary-light;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: v.$font-family-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+  }
+
+  &__intro {
+    max-width: 760px;
+    font-size: 1.05rem;
+  }
+
+  &__content {
+    margin-top: v.$spacing-lg;
+  }
+}
+
+// Recomendación
+
+.recommendation {
+  padding: v.section-spacing() v.$spacing-sm;
+
+  &__container {
+    max-width: v.$container-max-width;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    color: v.$color-primary;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    max-width: 800px;
+    font-family: v.$font-family-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+  }
+
+  &__text {
+    max-width: 760px;
+    color: v.$color-text-muted;
+    font-size: 1.05rem;
+  }
+}
+
+// Diseño adaptable: tabletas y escritorio
+
+@media (min-width: v.$breakpoint-tablet) {
+  .site-header {
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: v.$spacing-md;
+    }
+
+    &__brand {
+      margin-bottom: 0;
+    }
+  }
+
+  .authors {
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (min-width: v.$breakpoint-desktop) {
+  .hero {
+    min-height: 550px;
+    padding-top: v.section-spacing(1.5);
+    padding-bottom: v.section-spacing(1.5);
+  }
+
+  .book-section,
+  .authors,
+  .editions,
+  .recommendation {
+    padding-top: v.section-spacing(1.5);
+    padding-bottom: v.section-spacing(1.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

@@ -152,18 +152,16 @@ h3 {
   display: flex;
   align-items: center;
   overflow: hidden;
-
   background-color: #b51c20;
   background-image:
     linear-gradient(
       90deg,
-      rgba(15, 10, 12, 0.96) 0%,
-      rgba(30, 10, 13, 0.91) 35%,
-      rgba(30, 10, 13, 0.2) 72%,
-      rgba(30, 10, 13, 0) 100%
+      rgb(15 10 12 / 96%) 0%,
+      rgb(30 10 13 / 91%) 35%,
+      rgb(30 10 13 / 20%) 72%,
+      rgb(30 10 13 / 0%) 100%
     ),
     url("../images/born-again/portada-principal.jpg");
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 25%;
@@ -177,25 +175,23 @@ h3 {
   &__title,
   &__description {
     max-width: 650px;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+    text-shadow: 0 2px 12px rgb(0 0 0 / 65%);
   }
 }
 
 // Adaptación a pantallas pequeñas
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .hero {
     min-height: 740px;
     align-items: flex-end;
-
     background-image:
       linear-gradient(
         0deg,
-        rgba(15, 10, 12, 0.98) 0%,
-        rgba(15, 10, 12, 0.88) 35%,
-        rgba(15, 10, 12, 0.08) 85%
+        rgb(15 10 12 / 98%) 0%,
+        rgb(15 10 12 / 88%) 35%,
+        rgb(15 10 12 / 8%) 85%
       ),
       url("../images/born-again/portada-principal.jpg");
-
     background-position: center top;
 
     &__container {
@@ -258,8 +254,8 @@ h3 {
 
   &__grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: v.$spacing-md;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   &__card {
@@ -388,5 +384,79 @@ h3 {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+// Galería narrativa de La historia
+.story-gallery {
+  margin-top: 3rem;
+
+  &__title {
+    margin-bottom: 1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    color: v.$color-primary-dark;
+  }
+
+  &__intro {
+    max-width: 750px;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    color: v.$color-text-muted;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  &__item {
+    margin: 0;
+    overflow: hidden;
+    background-color: v.$color-surface;
+    border: 1px solid #ddd5cb;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.25rem;
+    line-height: 1.5;
+
+    strong {
+      color: v.$color-primary-dark;
+      font-size: 1.1rem;
+    }
+
+    span {
+      color: v.$color-text-muted;
+    }
+  }
+
+  @media (width >= 768px) {
+    &__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    &__caption {
+      padding: 0.75rem;
+      font-size: 0.9rem;
+
+      strong {
+        font-size: 1rem;
+      }
+    }
   }
 }

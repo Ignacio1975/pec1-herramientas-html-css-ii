@@ -411,7 +411,7 @@ h3 {
 // Ediciones españolas
 
 .editions {
-  padding: v.section-spacing() v.$spacing-sm;
+  padding: 3rem v.$spacing-sm;
   background-color: v.$color-dark;
   color: v.$color-white;
 
@@ -427,6 +427,7 @@ h3 {
   }
 
   &__title {
+    margin-bottom: 1rem;
     font-family: v.$font-family-serif;
     font-size: clamp(2rem, 5vw, 3.2rem);
   }
@@ -437,7 +438,42 @@ h3 {
   }
 
   &__content {
-    margin-top: v.$spacing-lg;
+    margin-top: 1rem;
+  }
+
+  &__figure {
+    width: 28%;
+    max-width: 240px;
+    margin: 0 1.5rem 1rem 0;
+
+    &--left {
+      float: left;
+    }
+
+    &--right {
+      float: right;
+      margin: 0 0 1rem 1.5rem;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__caption {
+    margin-top: 0.5rem;
+    color: #c5c5c5;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  &__content::after {
+    display: block;
+    clear: both;
+    content: "";
   }
 }
 
@@ -510,10 +546,9 @@ h3 {
     padding-bottom: 2rem;
   }
 
-  .editions,
-  .recommendation {
-    padding-top: v.section-spacing(1.5);
-    padding-bottom: v.section-spacing(1.5);
+  .editions {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
   }
 }
 

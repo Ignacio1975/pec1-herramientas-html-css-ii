@@ -12,9 +12,9 @@ html {
 
 body {
   margin: 0;
-  background-color: v.$color-background;
-  color: v.$color-text;
-  font-family: v.$font-family-sans-serif;
+  background-color: v.$color-fondo;
+  color: v.$color-texto;
+  font-family: v.$fuente-sin-remates;
   font-size: 1rem;
   line-height: 1.7;
 }
@@ -24,7 +24,7 @@ a {
 }
 
 a:focus-visible {
-  outline: 3px solid v.$color-primary;
+  outline: 3px solid v.$color-principal;
   outline-offset: 4px;
 }
 
@@ -42,27 +42,27 @@ h3 {
 }
 
 ::selection {
-  background-color: v.$color-primary;
-  color: v.$color-white;
+  background-color: v.$color-principal;
+  color: v.$color-blanco;
 }
 
 // Cabecera
 
-.site-header {
-  background-color: v.$color-dark;
-  color: v.$color-white;
+.cabecera {
+  background-color: v.$color-oscuro;
+  color: v.$color-blanco;
 
-  &__container {
-    max-width: v.$container-max-width;
+  &__contenedor {
+    max-width: v.$ancho-maximo-contenedor;
     margin: 0 auto;
-    padding: v.$spacing-md v.$spacing-sm;
+    padding: v.$espaciado-mediano v.$espaciado-pequeno;
   }
 
-  &__brand {
+  &__marca {
     display: inline-block;
-    margin-bottom: v.$spacing-sm;
-    color: v.$color-white;
-    font-family: v.$font-family-serif;
+    margin-bottom: v.$espaciado-pequeno;
+    color: v.$color-blanco;
+    font-family: v.$fuente-con-remates;
     font-size: 1.7rem;
     font-weight: 700;
     text-decoration: none;
@@ -71,81 +71,86 @@ h3 {
 
 // Navegación
 
-.site-nav {
-  &__list {
+.navegacion {
+  &__lista {
     display: flex;
     flex-wrap: wrap;
-    gap: v.$spacing-xs v.$spacing-md;
+    gap: v.$espaciado-extra-pequeno v.$espaciado-mediano;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  &__link {
-    color: v.$color-white;
+  &__enlace {
+    color: v.$color-blanco;
     font-size: 0.9rem;
     text-decoration: none;
 
     &:hover {
-      color: v.$color-primary-light;
+      color: v.$color-principal-claro;
     }
   }
 }
 
 // Presentación principal
 
-.hero {
+.portada {
   display: flex;
   align-items: center;
   min-height: 420px;
-  padding: v.section-spacing() v.$spacing-sm;
-  background: linear-gradient(135deg, v.$color-primary-dark, v.$color-dark 80%);
-  color: v.$color-white;
+  padding: v.espaciado-seccion() v.$espaciado-pequeno;
+  background: linear-gradient(
+    135deg,
+    v.$color-principal-oscuro,
+    v.$color-oscuro 80%
+  );
+  color: v.$color-blanco;
 
-  &__content {
+  &__contenido {
     width: 100%;
-    max-width: v.$container-max-width;
+    max-width: v.$ancho-maximo-contenedor;
     margin: 0 auto;
   }
 
-  &__eyebrow {
-    color: v.$color-primary-light;
+  &__etiqueta {
+    color: v.$color-principal-claro;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 
-  &__title {
+  &__titulo {
     max-width: 850px;
-    margin-bottom: v.$spacing-md;
-    font-family: v.$font-family-serif;
+    margin-bottom: v.$espaciado-mediano;
+    font-family: v.$fuente-con-remates;
     font-size: clamp(2.8rem, 8vw, 5.5rem);
   }
 
-  &__subtitle {
+  &__subtitulo {
     max-width: 680px;
-    margin-bottom: v.$spacing-lg;
+    margin-bottom: v.$espaciado-grande;
     font-size: 1.15rem;
   }
 
-  &__button {
+  &__boton {
     display: inline-block;
     padding: 0.85rem 1.5rem;
     border-radius: 4px;
-    background-color: v.$color-primary;
-    color: v.$color-white;
+    background-color: v.$color-principal;
+    color: v.$color-blanco;
     font-weight: 700;
     text-decoration: none;
 
     &:hover {
-      background-color: v.$color-primary-dark;
+      background-color: v.$color-principal-oscuro;
     }
   }
 }
 
 // Portada ilustrada de Born Again
-.hero {
+
+.portada {
   position: relative;
   isolation: isolate;
   min-height: 680px;
@@ -166,22 +171,23 @@ h3 {
   background-size: cover;
   background-position: center 80%;
 
-  &__container {
+  &__contenedor {
     position: relative;
     z-index: 1;
     width: 100%;
   }
 
-  &__title,
-  &__description {
+  &__titulo,
+  &__descripcion {
     max-width: 650px;
     text-shadow: 0 2px 12px rgb(0 0 0 / 65%);
   }
 }
 
 // Adaptación a pantallas pequeñas
+
 @media (width <= 767px) {
-  .hero {
+  .portada {
     min-height: 740px;
     align-items: flex-end;
     background-image:
@@ -194,16 +200,16 @@ h3 {
       url("../images/born-again/portada-principal.jpg");
     background-position: center top;
 
-    &__container {
+    &__contenedor {
       padding-bottom: 2rem;
     }
   }
 
-  .authors .authors__card {
+  .autores .autores__tarjeta {
     padding: 0.7rem;
   }
 
-  .authors__image {
+  .autores__imagen {
     width: 100%;
     max-width: none;
     height: auto;
@@ -211,39 +217,37 @@ h3 {
   }
 }
 
-// Historia de la obra
-
 // Contexto y análisis de la obra
 
-.book-section {
-  padding: 3rem v.$spacing-sm;
+.seccion-obra {
+  padding: 3rem v.$espaciado-pequeno;
 
-  &__container {
+  &__contenedor {
     width: 100%;
-    max-width: v.$container-max-width;
+    max-width: v.$ancho-maximo-contenedor;
     margin: 0 auto;
   }
 
-  &__eyebrow {
+  &__etiqueta {
     margin-bottom: 0.75rem;
-    color: v.$color-primary;
+    color: v.$color-principal;
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
-  &__title {
+  &__titulo {
     max-width: 760px;
     margin-bottom: 2rem;
-    font-family: v.$font-family-serif;
+    font-family: v.$fuente-con-remates;
     font-size: clamp(2rem, 5vw, 3.2rem);
     line-height: 1.2;
   }
 
-  &__text {
+  &__texto {
     max-width: 760px;
-    color: v.$color-text-muted;
+    color: v.$color-texto-secundario;
     font-size: 1.05rem;
     line-height: 1.8;
 
@@ -257,21 +261,21 @@ h3 {
 
     h3 {
       margin-bottom: 1.5rem;
-      color: v.$color-text;
-      font-family: v.$font-family-serif;
+      color: v.$color-texto;
+      font-family: v.$fuente-con-remates;
       font-size: 1.5rem;
       line-height: 1.3;
     }
 
     strong {
-      color: v.$color-text;
+      color: v.$color-texto;
     }
   }
 }
 
 // Imágenes integradas en el texto editorial
 
-.book-section__figure {
+.seccion-obra__figura {
   width: 100%;
   max-width: 360px;
   margin: 1.5rem auto 2rem;
@@ -281,26 +285,26 @@ h3 {
     margin-top: 0.4rem;
     margin-bottom: 1.25rem;
 
-    &--right {
+    &--derecha {
       float: right;
       margin-left: 1.5rem;
     }
 
-    &--left {
+    &--izquierda {
       float: left;
       margin-right: 1.5rem;
     }
   }
 }
 
-.book-section__image {
+.seccion-obra__imagen {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 0.25rem;
 }
 
-.book-section__caption {
+.seccion-obra__pie-imagen {
   margin-top: 0.5rem;
   color: #666;
   font-size: 0.8rem;
@@ -308,7 +312,7 @@ h3 {
   line-height: 1.5;
 }
 
-.book-section__closing-gallery {
+.seccion-obra__galeria-final {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
@@ -316,11 +320,11 @@ h3 {
   margin-top: 2rem;
 }
 
-.book-section__closing-figure {
+.seccion-obra__figura-final {
   margin: 0;
   text-align: center;
 
-  .book-section__image {
+  .seccion-obra__imagen {
     width: 100%;
     height: 280px;
     object-fit: contain;
@@ -328,11 +332,11 @@ h3 {
 }
 
 @media (width <= 767px) {
-  .book-section__closing-gallery {
+  .seccion-obra__galeria-final {
     grid-template-columns: 1fr;
   }
 
-  .book-section__closing-figure .book-section__image {
+  .seccion-obra__figura-final .seccion-obra__imagen {
     height: auto;
     max-height: 320px;
   }
@@ -340,6 +344,7 @@ h3 {
 
 #contexto {
   padding-bottom: 1rem;
+  background-color: #fff;
 }
 
 #historia {
@@ -348,56 +353,58 @@ h3 {
 
 // Autores
 
-.authors {
-  padding: v.section-spacing() v.$spacing-sm;
-  background-color: v.$color-surface;
+.autores {
+  padding: v.espaciado-seccion() v.$espaciado-pequeno;
+  background-color: v.$color-superficie;
 
-  &__container {
-    max-width: v.$container-max-width;
+  &__contenedor {
+    max-width: v.$ancho-maximo-contenedor;
     margin: 0 auto;
   }
 
-  &__eyebrow {
-    color: v.$color-primary;
+  &__etiqueta {
+    color: v.$color-principal;
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  &__title {
-    margin-bottom: v.$spacing-lg;
-    font-family: v.$font-family-serif;
+  &__titulo {
+    margin-bottom: v.$espaciado-grande;
+    font-family: v.$fuente-con-remates;
     font-size: clamp(2rem, 5vw, 3.2rem);
   }
 
-  &__grid {
+  &__cuadricula {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  &__card {
-    padding: v.$spacing-lg;
-    border-left: 5px solid v.$color-primary;
-    background-color: v.$color-background;
+  &__tarjeta {
+    padding: v.$espaciado-grande;
+    border-left: 5px solid v.$color-principal;
+    background-color: #252525;
+    color: #fff;
   }
 
-  &__name {
-    margin-bottom: v.$spacing-xs;
+  &__nombre {
+    margin-bottom: v.$espaciado-extra-pequeno;
+    color: #fff;
     font-size: 1.5rem;
   }
 
-  &__role {
-    color: v.$color-primary;
+  &__funcion {
+    color: #f66;
     font-weight: 700;
   }
 
-  &__description {
+  &__descripcion {
     margin-bottom: 0;
-    color: v.$color-text-muted;
+    color: #ddd;
   }
 }
 
-.authors__image {
+.autores__imagen {
   display: block;
   width: 100%;
   max-width: 220px;
@@ -410,59 +417,59 @@ h3 {
 
 // Ediciones españolas
 
-.editions {
-  padding: 3rem v.$spacing-sm;
-  background-color: v.$color-dark;
-  color: v.$color-white;
+.ediciones {
+  padding: 3rem v.$espaciado-pequeno;
+  background-color: v.$color-fondo;
+  color: v.$color-texto;
 
-  &__container {
-    max-width: v.$container-max-width;
+  &__contenedor {
+    max-width: v.$ancho-maximo-contenedor;
     margin: 0 auto;
   }
 
-  &__eyebrow {
-    color: v.$color-primary-light;
+  &__etiqueta {
+    color: v.$color-principal;
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  &__title {
+  &__titulo {
     margin-bottom: 1rem;
-    font-family: v.$font-family-serif;
+    font-family: v.$fuente-con-remates;
     font-size: clamp(2rem, 5vw, 3.2rem);
   }
 
-  &__intro {
+  &__introduccion {
     max-width: 760px;
     font-size: 1.05rem;
   }
 
-  &__content {
+  &__contenido {
     margin-top: 1rem;
   }
 
-  &__figure {
+  &__figura {
     width: 28%;
     max-width: 240px;
     margin: 0 1.5rem 1rem 0;
 
-    &--left {
+    &--izquierda {
       float: left;
     }
 
-    &--right {
+    &--derecha {
       float: right;
       margin: 0 0 1rem 1.5rem;
     }
   }
 
-  &__image {
+  &__imagen {
     display: block;
     width: 100%;
     height: auto;
   }
 
-  &__caption {
+  &__pie-imagen {
     margin-top: 0.5rem;
     color: #c5c5c5;
     font-size: 0.8rem;
@@ -470,83 +477,54 @@ h3 {
     text-align: center;
   }
 
-  &__content::after {
+  &__contenido::after {
     display: block;
     clear: both;
     content: "";
   }
 }
 
-// Recomendación
-
-.recommendation {
-  padding: v.section-spacing() v.$spacing-sm;
-
-  &__container {
-    max-width: v.$container-max-width;
-    margin: 0 auto;
-  }
-
-  &__eyebrow {
-    color: v.$color-primary;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  &__title {
-    max-width: 800px;
-    font-family: v.$font-family-serif;
-    font-size: clamp(2rem, 5vw, 3.2rem);
-  }
-
-  &__text {
-    max-width: 760px;
-    color: v.$color-text-muted;
-    font-size: 1.05rem;
-  }
-}
-
 // Diseño adaptable: tabletas y escritorio
 
-@media (min-width: v.$breakpoint-tablet) {
-  .site-header {
-    &__container {
+@media (min-width: v.$punto-ruptura-tableta) {
+  .cabecera {
+    &__contenedor {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: v.$spacing-md;
+      gap: v.$espaciado-mediano;
     }
 
-    &__brand {
+    &__marca {
       margin-bottom: 0;
     }
   }
 
-  .authors {
-    &__grid {
+  .autores {
+    &__cuadricula {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }
 
-@media (min-width: v.$breakpoint-desktop) {
-  .hero {
+@media (min-width: v.$punto-ruptura-escritorio) {
+  .portada {
     min-height: 550px;
-    padding-top: v.section-spacing(1.5);
-    padding-bottom: v.section-spacing(1.5);
+    padding-top: v.espaciado-seccion(1.5);
+    padding-bottom: v.espaciado-seccion(1.5);
   }
 
-  .book-section {
+  .seccion-obra {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
-  .authors {
+  .autores {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
-  .editions {
+  .ediciones {
     padding-top: 3rem;
     padding-bottom: 2rem;
   }
@@ -559,48 +537,49 @@ h3 {
 }
 
 // Galería narrativa de La historia
-.story-gallery {
+
+.galeria-narrativa {
   width: 100%;
   max-width: 760px;
   margin: 3rem 0 0;
 
-  &__title {
+  &__titulo {
     margin-bottom: 1rem;
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     line-height: 1.2;
-    color: v.$color-primary-dark;
+    color: v.$color-principal-oscuro;
   }
 
-  &__intro {
+  &__introduccion {
     max-width: 750px;
     margin-bottom: 2rem;
     line-height: 1.7;
-    color: v.$color-text-muted;
+    color: v.$color-texto-secundario;
   }
 
-  &__grid {
+  &__cuadricula {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
   }
 
-  &__item {
+  &__elemento {
     margin: 0;
     overflow: hidden;
-    background-color: v.$color-surface;
+    background-color: v.$color-superficie;
     border: 1px solid #ddd5cb;
     border-radius: 0.5rem;
     box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
   }
 
-  &__image {
+  &__imagen {
     display: block;
     width: 100%;
     height: auto;
   }
 
-  &__caption {
+  &__pie-imagen {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
@@ -608,21 +587,21 @@ h3 {
     line-height: 1.5;
 
     strong {
-      color: v.$color-primary-dark;
+      color: v.$color-principal-oscuro;
       font-size: 1.1rem;
     }
 
     span {
-      color: v.$color-text-muted;
+      color: v.$color-texto-secundario;
     }
   }
 
   @media (width >= 768px) {
-    &__grid {
+    &__cuadricula {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    &__caption {
+    &__pie-imagen {
       padding: 0.75rem;
       font-size: 0.9rem;
 
@@ -635,18 +614,18 @@ h3 {
 
 // Pie de página
 
-.site-footer {
+.pie-pagina {
   padding: 2.5rem 1.5rem 1.5rem;
-  background-color: v.$color-dark;
-  color: v.$color-white;
+  background-color: v.$color-oscuro;
+  color: v.$color-blanco;
 
-  &__container {
+  &__contenedor {
     width: 100%;
-    max-width: v.$container-max-width;
+    max-width: v.$ancho-maximo-contenedor;
     margin: 0 auto;
   }
 
-  &__top {
+  &__superior {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -654,36 +633,36 @@ h3 {
     border-bottom: 1px solid rgb(255 255 255 / 20%);
   }
 
-  &__title {
+  &__titulo {
     margin-bottom: 0.4rem;
-    font-family: v.$font-family-serif;
+    font-family: v.$fuente-con-remates;
     font-size: 1.5rem;
     font-weight: 700;
   }
 
-  &__subtitle {
+  &__subtitulo {
     margin-bottom: 0;
     color: #c8c8c8;
     font-size: 0.95rem;
   }
 
-  &__back-to-top {
+  &__volver-arriba {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
     align-self: flex-start;
-    color: v.$color-primary-light;
+    color: v.$color-principal-claro;
     font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
 
     &:hover {
-      color: v.$color-white;
+      color: v.$color-blanco;
       text-decoration: underline;
     }
   }
 
-  &__bottom {
+  &__inferior {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -696,18 +675,18 @@ h3 {
     }
   }
 
-  @media (min-width: v.$breakpoint-tablet) {
-    &__top {
+  @media (min-width: v.$punto-ruptura-tableta) {
+    &__superior {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
     }
 
-    &__back-to-top {
+    &__volver-arriba {
       align-self: center;
     }
 
-    &__bottom {
+    &__inferior {
       flex-direction: row;
       justify-content: space-between;
       gap: 2rem;
@@ -717,21 +696,22 @@ h3 {
 
 // Montaje de las siete portadas originales
 
-.book-section__covers {
+.seccion-obra__portadas {
   width: 100%;
   max-width: 600px;
   margin: 2rem 0;
   text-align: center;
 }
 
-.book-section__covers-image {
+.seccion-obra__imagen-portadas {
   display: block;
   width: 100%;
   height: auto;
 }
 
 // Galerías de dos ilustraciones
-.book-section__double-gallery {
+
+.seccion-obra__galeria-doble {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
@@ -740,19 +720,19 @@ h3 {
   margin: 2rem 0;
 }
 
-.book-section__double-figure {
+.seccion-obra__figura-doble {
   min-width: 0;
   margin: 0;
 }
 
-.book-section__double-image {
+.seccion-obra__imagen-doble {
   display: block;
   width: 100%;
   height: auto;
 }
 
 @media (width >= 768px) {
-  .book-section__double-gallery {
+  .seccion-obra__galeria-doble {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

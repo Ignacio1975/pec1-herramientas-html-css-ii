@@ -2,46 +2,46 @@
 
 // Tipografías
 
-$font-family-sans-serif:
+$fuente-sin-remates:
   -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue",
   arial, sans-serif;
-$font-family-serif: georgia, "Times New Roman", serif;
+$fuente-con-remates: georgia, "Times New Roman", serif;
 
 // Colores
 
-$color-primary: #a71924;
-$color-primary-dark: #701019;
-$color-background: #f5f0e8;
-$color-surface: #fffdf9;
-$color-text: #202020;
-$color-text-muted: #57534e;
-$color-dark: #171717;
-$color-white: #fff;
+$color-principal: #a71924;
+$color-principal-oscuro: #701019;
+$color-fondo: #f5f0e8;
+$color-superficie: #fffdf9;
+$color-texto: #202020;
+$color-texto-secundario: #57534e;
+$color-oscuro: #171717;
+$color-blanco: #fff;
 
 // Espaciado
 
-$spacing-xs: 0.5rem;
-$spacing-sm: 1rem;
-$spacing-md: 1.5rem;
-$spacing-lg: 2.5rem;
-$spacing-xl: 4rem;
+$espaciado-extra-pequeno: 0.5rem;
+$espaciado-pequeno: 1rem;
+$espaciado-mediano: 1.5rem;
+$espaciado-grande: 2.5rem;
+$espaciado-extra-grande: 4rem;
 
 // Diseño adaptable
 
-$mq-min-width: 420px;
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
+$ancho-minimo-consulta: 420px;
+$punto-ruptura-tableta: 768px;
+$punto-ruptura-escritorio: 1024px;
 
 // Contenedores
 
-$container-max-width: 1100px;
+$ancho-maximo-contenedor: 1100px;
 
 // Función Sass personalizada
 
-@function section-spacing($multiplier: 1) {
-  @return $spacing-xl * $multiplier;
+@function espaciado-seccion($multiplicador: 1) {
+  @return $espaciado-extra-grande * $multiplicador;
 }
 
 // Variación cromática
 
-$color-primary-light: color.scale($color-primary, $lightness: 75%);
+$color-principal-claro: color.scale($color-principal, $lightness: 75%);

@@ -23,35 +23,35 @@
   <body>
     <!-- CABECERA Y NAVEGACIÓN -->
 
-    <header class="site-header">
-      <div class="site-header__container">
-        <a class="site-header__brand" href="#inicio">Born Again</a>
+    <header class="cabecera">
+      <div class="cabecera__contenedor">
+        <a class="cabecera__marca" href="#inicio">Born Again</a>
 
-        <nav class="site-nav" aria-label="Navegación principal">
-          <ul class="site-nav__list">
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="#contexto">
+        <nav class="navegacion" aria-label="Navegación principal">
+          <ul class="navegacion__lista">
+            <li class="navegacion__elemento">
+              <a class="navegacion__enlace" href="#contexto">
                 <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
                 Contexto
               </a>
             </li>
 
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="#historia">
+            <li class="navegacion__elemento">
+              <a class="navegacion__enlace" href="#historia">
                 <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                 La historia
               </a>
             </li>
 
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="#autores">
+            <li class="navegacion__elemento">
+              <a class="navegacion__enlace" href="#autores">
                 <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
                 Los autores
               </a>
             </li>
 
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="#ediciones">
+            <li class="navegacion__elemento">
+              <a class="navegacion__enlace" href="#ediciones">
                 <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
                 Ediciones españolas
               </a>
@@ -66,47 +66,51 @@
     <main id="inicio">
       <!-- PRESENTACIÓN -->
 
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__content">
-          <p class="hero__eyebrow">
+      <section class="portada" aria-labelledby="titulo-portada">
+        <div class="portada__contenido">
+          <p class="portada__etiqueta">
             Una historia sobre caer y volver a levantarse
           </p>
 
-          <h1 class="hero__title" id="hero-title">Daredevil: Born Again</h1>
+          <h1 class="portada__titulo" id="titulo-portada">
+            Daredevil: Born Again
+          </h1>
 
-          <p class="hero__subtitle">
+          <p class="portada__subtitulo">
             Frank Miller y David Mazzucchelli reinventaron al Hombre sin Miedo
             en una de las historias más memorables del cómic estadounidense.
           </p>
 
-          <a class="hero__button" href="#historia"> Descubre la obra </a>
+          <a class="portada__boton" href="#historia"> Descubre la obra </a>
         </div>
       </section>
 
       <!-- CONTEXTO -->
 
       <section
-        class="book-section"
+        class="seccion-obra"
         id="contexto"
-        aria-labelledby="context-title"
+        aria-labelledby="titulo-contexto"
       >
-        <div class="book-section__container">
-          <p class="book-section__eyebrow">Antecedentes</p>
-          <h2 class="book-section__title" id="context-title">
+        <div class="seccion-obra__contenedor">
+          <p class="seccion-obra__etiqueta">Antecedentes</p>
+          <h2 class="seccion-obra__titulo" id="titulo-contexto">
             Contexto de la obra
           </h2>
 
-          <div class="book-section__text">
+          <div class="seccion-obra__texto">
             <h3>La transformación de Daredevil</h3>
 
-            <figure class="book-section__figure book-section__figure--left">
+            <figure
+              class="seccion-obra__figura seccion-obra__figura--izquierda"
+            >
               <img
-                class="book-section__image"
+                class="seccion-obra__imagen"
                 src="./assets/images/born-again/bill-everett.jpg"
                 alt="Daredevil en una secuencia dibujada por Bill Everett"
                 loading="lazy"
               />
-              <figcaption class="book-section__caption">
+              <figcaption class="seccion-obra__pie-imagen">
                 Daredevil en sus primeros años. Dibujo de Bill Everett.
               </figcaption>
             </figure>
@@ -125,14 +129,14 @@
 
             <p><strong>Y en esas que llegó Miller…</strong></p>
 
-            <figure class="book-section__figure book-section__figure--right">
+            <figure class="seccion-obra__figura seccion-obra__figura--derecha">
               <img
-                class="book-section__image"
+                class="seccion-obra__imagen"
                 src="./assets/images/born-again/John_romita.jpg"
                 alt="Daredevil ajustándose el uniforme en una secuencia dibujada por John Romita"
                 loading="lazy"
               />
-              <figcaption class="book-section__caption">
+              <figcaption class="seccion-obra__pie-imagen">
                 Daredevil según John Romita.
               </figcaption>
             </figure>
@@ -156,14 +160,16 @@
               Miller y se convirtió en otro totalmente distinto. Para siempre.
             </p>
 
-            <figure class="book-section__figure book-section__figure--left">
+            <figure
+              class="seccion-obra__figura seccion-obra__figura--izquierda"
+            >
               <img
-                class="book-section__image"
+                class="seccion-obra__imagen"
                 src="./assets/images/born-again/gene-colan.jpg"
                 alt="Ilustración de Daredevil realizada por Gene Colan"
                 loading="lazy"
               />
-              <figcaption class="book-section__caption">
+              <figcaption class="seccion-obra__pie-imagen">
                 Daredevil según Gene Colan.
               </figcaption>
             </figure>
@@ -191,27 +197,27 @@
               artístico, la serie alcanzó unas cotas de excelencia gráfica que
               no tenía desde los tiempos de Gene Colan.
             </p>
-            <div class="book-section__closing-gallery">
-              <figure class="book-section__closing-figure">
+            <div class="seccion-obra__galeria-final">
+              <figure class="seccion-obra__figura-final">
                 <img
-                  class="book-section__image"
+                  class="seccion-obra__imagen"
                   src="./assets/images/born-again/bob-brown.jpg"
                   alt="Daredevil enfrentándose a Bullseye, dibujado por Bob Brown"
                   loading="lazy"
                 />
-                <figcaption class="book-section__caption">
+                <figcaption class="seccion-obra__pie-imagen">
                   Daredevil y Bullseye. Dibujo de Bob Brown.
                 </figcaption>
               </figure>
 
-              <figure class="book-section__closing-figure">
+              <figure class="seccion-obra__figura-final">
                 <img
-                  class="book-section__image"
+                  class="seccion-obra__imagen"
                   src="./assets/images/born-again/frank-miller.jpg"
                   alt="Ilustración de Daredevil realizada por Frank Miller"
                   loading="lazy"
                 />
-                <figcaption class="book-section__caption">
+                <figcaption class="seccion-obra__pie-imagen">
                   Daredevil con Elektra, creación de Frank Miller para la
                   colección.
                 </figcaption>
@@ -223,39 +229,43 @@
 
       <!-- LA HISTORIA -->
 
-      <section class="book-section" id="historia" aria-labelledby="story-title">
-        <div class="book-section__container">
-          <p class="book-section__eyebrow">La obra</p>
+      <section
+        class="seccion-obra"
+        id="historia"
+        aria-labelledby="titulo-historia"
+      >
+        <div class="seccion-obra__contenedor">
+          <p class="seccion-obra__etiqueta">La obra</p>
 
-          <h2 class="book-section__title" id="story-title">
+          <h2 class="seccion-obra__titulo" id="titulo-historia">
             La caída de Matt Murdock
           </h2>
-          <figure class="book-section__covers">
+          <figure class="seccion-obra__portadas">
             <img
-              class="book-section__covers-image"
+              class="seccion-obra__imagen-portadas"
               src="./assets/images/born-again/portadas-originales.jpg"
               alt="Montaje de las siete portadas originales de Daredevil que componen Born Again, números 227 a 233"
               loading="lazy"
             />
-            <figcaption class="book-section__caption">
+            <figcaption class="seccion-obra__pie-imagen">
               Las siete portadas originales de Born Again, publicadas en
               Daredevil entre los números 227 y 233 (1986).
             </figcaption>
           </figure>
-          <p class="book-section__text">
+          <p class="seccion-obra__texto">
             Publicada originalmente en Daredevil #227–233, en 1986, Born Again
             presenta a Matt Murdock en uno de los momentos más difíciles de su
             vida.
           </p>
 
-          <p class="book-section__text">
+          <p class="seccion-obra__texto">
             Cuando Kingpin descubre su identidad secreta, comienza una campaña
             para destruir todo aquello que Matt ha construido. La historia
             explora la pérdida, la resistencia y la posibilidad de empezar de
             nuevo.
           </p>
 
-          <div class="book-section__text">
+          <div class="seccion-obra__texto">
             <p><strong>Y en esas que volvió Miller…</strong></p>
 
             <p>
@@ -273,28 +283,28 @@
               narrativo del Miller dibujante, la excelencia gráfica de
               Mazzuchelli lo compensará sobradamente.
             </p>
-            <div class="book-section__double-gallery">
-              <figure class="book-section__double-figure">
+            <div class="seccion-obra__galeria-doble">
+              <figure class="seccion-obra__figura-doble">
                 <img
-                  class="book-section__double-image"
+                  class="seccion-obra__imagen-doble"
                   src="./assets/images/born-again/karen-page.jpg"
                   alt="Primera página de Born Again, en la que Karen Page revela la identidad secreta de Daredevil"
                   loading="lazy"
                 />
-                <figcaption class="book-section__caption">
+                <figcaption class="seccion-obra__pie-imagen">
                   Primera página de Born Again, en la que Karen Page revela la
                   identidad secreta de Daredevil.
                 </figcaption>
               </figure>
 
-              <figure class="book-section__double-figure">
+              <figure class="seccion-obra__figura-doble">
                 <img
-                  class="book-section__double-image"
+                  class="seccion-obra__imagen-doble"
                   src="./assets/images/born-again/kingpin.jpg"
                   alt="Página de Born Again con una pelea que muestra la degradación de Matt Murdock urdida por Kingpin"
                   loading="lazy"
                 />
-                <figcaption class="book-section__caption">
+                <figcaption class="seccion-obra__pie-imagen">
                   Página de Born Again con una pelea que muestra la degradación
                   de Matt Murdock urdida por Kingpin.
                 </figcaption>
@@ -320,55 +330,55 @@
               personajes, tanto Kingpin como los más cercanos a Daredevil,
               quedan relegados a una narración en tercera persona.
             </p>
-            <div class="story-gallery">
-              <div class="story-gallery__grid">
-                <figure class="story-gallery__item">
+            <div class="galeria-narrativa">
+              <div class="galeria-narrativa__cuadricula">
+                <figure class="galeria-narrativa__elemento">
                   <img
-                    class="story-gallery__image"
+                    class="galeria-narrativa__imagen"
                     src="./assets/images/born-again/01-apocalipsis.jpg"
                     alt="Matt Murdock duerme en su cama, en su vivienda"
                     loading="lazy"
                   />
-                  <figcaption class="story-gallery__caption">
+                  <figcaption class="galeria-narrativa__pie-imagen">
                     <strong>01. Apocalipsis</strong>
                     <span>El hogar y la seguridad.</span>
                   </figcaption>
                 </figure>
 
-                <figure class="story-gallery__item">
+                <figure class="galeria-narrativa__elemento">
                   <img
-                    class="story-gallery__image"
+                    class="galeria-narrativa__imagen"
                     src="./assets/images/born-again/02-purgatorio.jpg"
                     alt="Matt Murdock duerme encogido en la cama de un motel"
                     loading="lazy"
                   />
-                  <figcaption class="story-gallery__caption">
+                  <figcaption class="galeria-narrativa__pie-imagen">
                     <strong>02. Purgatorio</strong>
                     <span>Un motel de mala muerte.</span>
                   </figcaption>
                 </figure>
 
-                <figure class="story-gallery__item">
+                <figure class="galeria-narrativa__elemento">
                   <img
-                    class="story-gallery__image"
+                    class="galeria-narrativa__imagen"
                     src="./assets/images/born-again/03-paria.jpg"
                     alt="Matt Murdock duerme en posición fetal entre la basura"
                     loading="lazy"
                   />
-                  <figcaption class="story-gallery__caption">
+                  <figcaption class="galeria-narrativa__pie-imagen">
                     <strong>03. Paria</strong>
                     <span>La calle. El fondo de su caída.</span>
                   </figcaption>
                 </figure>
 
-                <figure class="story-gallery__item">
+                <figure class="galeria-narrativa__elemento">
                   <img
-                    class="story-gallery__image"
+                    class="galeria-narrativa__imagen"
                     src="./assets/images/born-again/04-nacer-otra-vez.jpg"
                     alt="Matt Murdock descansa en una cama bajo el cuidado de unas religiosas"
                     loading="lazy"
                   />
-                  <figcaption class="story-gallery__caption">
+                  <figcaption class="galeria-narrativa__pie-imagen">
                     <strong>04. Nacer otra vez</strong>
                     <span>El refugio y la esperanza.</span>
                   </figcaption>
@@ -388,28 +398,28 @@
               fortuna de caer en las manos de Frank Miller en el momento
               indicado.
             </p>
-            <div class="book-section__double-gallery">
-              <figure class="book-section__double-figure">
+            <div class="seccion-obra__galeria-doble">
+              <figure class="seccion-obra__figura-doble">
                 <img
-                  class="book-section__double-image"
+                  class="seccion-obra__imagen-doble"
                   src="./assets/images/born-again/matt-y-su-madre.jpg"
                   alt="Matt Murdock descansa en brazos de su madre, vestida de monja, en una composición inspirada en la Pietà"
                   loading="lazy"
                 />
-                <figcaption class="book-section__caption">
+                <figcaption class="seccion-obra__pie-imagen">
                   La iconografía religiosa, uno de los elementos centrales de
                   Born Again. Dibujo de David Mazzucchelli.
                 </figcaption>
               </figure>
 
-              <figure class="book-section__double-figure">
+              <figure class="seccion-obra__figura-doble">
                 <img
-                  class="book-section__double-image"
+                  class="seccion-obra__imagen-doble"
                   src="./assets/images/born-again/matt-y-karen.jpg"
                   alt="Matt Murdock y Karen Page se abrazan en una escena de Born Again"
                   loading="lazy"
                 />
-                <figcaption class="book-section__caption">
+                <figcaption class="seccion-obra__pie-imagen">
                   El reencuentro de Matt Murdock y Karen Page. Dibujo de David
                   Mazzucchelli.
                 </figcaption>
@@ -431,27 +441,27 @@
 
       <!-- LOS AUTORES -->
 
-      <section class="authors" id="autores" aria-labelledby="authors-title">
-        <div class="authors__container">
-          <p class="authors__eyebrow">Los creadores</p>
+      <section class="autores" id="autores" aria-labelledby="titulo-autores">
+        <div class="autores__contenedor">
+          <p class="autores__etiqueta">Los creadores</p>
 
-          <h2 class="authors__title" id="authors-title">
+          <h2 class="autores__titulo" id="titulo-autores">
             Dos autores en estado de gracia
           </h2>
 
-          <div class="authors__grid">
-            <article class="authors__card">
+          <div class="autores__cuadricula">
+            <article class="autores__tarjeta">
               <img
-                class="authors__image"
+                class="autores__imagen"
                 src="./assets/images/born-again/frank-miller.png"
                 alt="Frank Miller trabajando en una mesa de dibujo"
                 loading="lazy"
               />
-              <h3 class="authors__name">Frank Miller</h3>
+              <h3 class="autores__nombre">Frank Miller</h3>
 
-              <p class="authors__role">Guion</p>
+              <p class="autores__funcion">Guion</p>
 
-              <p class="authors__description">
+              <p class="autores__descripcion">
                 Frank Miller (1957) es uno de los autores más influyentes del
                 cómic estadounidense contemporáneo. Su llegada a
                 <em>Daredevil</em> a finales de los años setenta, primero como
@@ -469,18 +479,18 @@
               </p>
             </article>
 
-            <article class="authors__card">
+            <article class="autores__tarjeta">
               <img
-                class="authors__image"
+                class="autores__imagen"
                 src="./assets/images/born-again/david-mazzucchelli.png"
                 alt="Retrato de David Mazzucchelli"
                 loading="lazy"
               />
-              <h3 class="authors__name">David Mazzucchelli</h3>
+              <h3 class="autores__nombre">David Mazzucchelli</h3>
 
-              <p class="authors__role">Dibujo</p>
+              <p class="autores__funcion">Dibujo</p>
 
-              <p class="authors__description">
+              <p class="autores__descripcion">
                 David Mazzucchelli (1960) es un dibujante estadounidense
                 reconocido por su capacidad narrativa y por la evolución de su
                 estilo a lo largo de su carrera. Tras trabajar para Marvel
@@ -503,34 +513,38 @@
 
       <!-- EDICIONES ESPAÑOLAS -->
 
-      <section class="editions" id="ediciones" aria-labelledby="editions-title">
-        <div class="editions__container">
-          <p class="editions__eyebrow">Historia editorial</p>
+      <section
+        class="ediciones"
+        id="ediciones"
+        aria-labelledby="titulo-ediciones"
+      >
+        <div class="ediciones__contenedor">
+          <p class="ediciones__etiqueta">Historia editorial</p>
 
-          <h2 class="editions__title" id="editions-title">
+          <h2 class="ediciones__titulo" id="titulo-ediciones">
             Ediciones españolas
           </h2>
 
-          <p class="editions__intro">
+          <p class="ediciones__introduccion">
             Desde su publicación original en Estados Unidos, Daredevil: Born
             Again ha conocido distintas ediciones en España. Este apartado
             repasa su trayectoria editorial, sus formatos y las particularidades
             de cada publicación.
           </p>
 
-          <figure class="editions__figure editions__figure--right">
+          <figure class="ediciones__figura ediciones__figura--derecha">
             <img
-              class="editions__image"
+              class="ediciones__imagen"
               src="./assets/images/born-again/spiderman-112.jpg"
               alt="Portada de Spiderman número 112 de Cómics Fórum"
               loading="lazy"
             />
-            <figcaption class="editions__caption">
+            <figcaption class="ediciones__pie-imagen">
               Spiderman n.º 112, donde comenzó a publicarse Born Again.
             </figcaption>
           </figure>
 
-          <div class="editions__content">
+          <div class="ediciones__contenido">
             <p>
               La primera edición de <em>Born Again</em> en España fue un
               auténtico despropósito. La editorial licenciataria de Marvel en
@@ -563,14 +577,14 @@
               tarde.
             </p>
 
-            <figure class="editions__figure editions__figure--left">
+            <figure class="ediciones__figura ediciones__figura--izquierda">
               <img
-                class="editions__image"
+                class="ediciones__imagen"
                 src="./assets/images/born-again/obras-maestras.jpg"
                 alt="Portada del primer tomo de Obras Maestras de Cómics Fórum dedicado a Born Again"
                 loading="lazy"
               />
-              <figcaption class="editions__caption">
+              <figcaption class="ediciones__pie-imagen">
                 Obras Maestras n.º 1. Fórum, 1991.
               </figcaption>
             </figure>
@@ -587,15 +601,15 @@
             </p>
 
             <figure
-              class="editions__figure editions__figure--right editions__figure--clear"
+              class="ediciones__figura ediciones__figura--derecha ediciones__figura--despejada"
             >
               <img
-                class="editions__image"
+                class="ediciones__imagen"
                 src="./assets/images/born-again/grandes-tesoros.jpg"
                 alt="Portada de Daredevil Born Again en la colección Grandes Tesoros Marvel de Panini"
                 loading="lazy"
               />
-              <figcaption class="editions__caption">
+              <figcaption class="ediciones__pie-imagen">
                 Grandes Tesoros Marvel. Panini Cómics.
               </figcaption>
             </figure>
@@ -620,9 +634,31 @@
       </section>
     </main>
 
-    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+      <div class="pie-pagina__contenedor">
+        <div class="pie-pagina__superior">
+          <div class="pie-pagina__identidad">
+            <p class="pie-pagina__titulo">Daredevil: Born Again</p>
+            <p class="pie-pagina__subtitulo">
+              Una mirada a la obra de Frank Miller y David Mazzucchelli.
+            </p>
+          </div>
 
-    <include src="./views/footer.html"></include>
+          <a class="pie-pagina__volver-arriba" href="#inicio">
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+            Volver arriba
+          </a>
+        </div>
+
+        <div class="pie-pagina__inferior">
+          <p>Proyecto académico · UOC · 2026</p>
+          <p>
+            Daredevil y las ilustraciones reproducidas pertenecen a sus
+            respectivos titulares de derechos.
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <!-- JAVASCRIPT -->
 
